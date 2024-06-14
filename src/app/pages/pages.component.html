@@ -1,0 +1,63 @@
+<mat-toolbar class="main-toolbar">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <i class="material-icons">menu</i>
+  </button>
+  <img src="assets/img/logo.png" class="logo" alt="" />
+  <span>My Application</span>
+
+  <span class="fill-remaining-space"></span>
+
+  <i class="material-icons" style="cursor: pointer" [matMenuTriggerFor]="menu"
+    >person</i
+  >
+  <i class="material-icons menu-icon" [matMenuTriggerFor]="menu">more_vert</i>
+  <mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item>Edit Profile</button>
+    <button mat-menu-item>Change Password</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+</mat-toolbar>
+<mat-drawer-container class="main-container" autosize fullscreen>
+  <mat-drawer #drawer mode="side" opened="true" class="main-sidenav">
+    <div *ngFor="let menu of menus">
+      <mat-list *ngIf="menu.menuItem.length == 0">
+        <a routerLink="{{ menu.path }}" routerLinkActive="sidenav-menu-active">
+          <mat-list-item class="single-level-menu">
+            <mat-panel-title>
+              <i class="material-icons sidenav-icon">{{ menu.icon }}</i
+              >{{ menu.title }}
+            </mat-panel-title>
+          </mat-list-item>
+        </a>
+      </mat-list>
+      <mat-accordion *ngIf="menu.menuItem.length > 0">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <i class="material-icons sidenav-icon">{{ menu.icon }}</i
+              >{{ menu.title }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <a
+              routerLinkActive="sidenav-menu-active"
+              *ngFor="let subMenu of menu.menuItem"
+              routerLink="{{ subMenu.path }}"
+            >
+              <mat-list-item class="multi-level-menu">
+                <mat-panel-title>
+                  <i class="material-icons sidenav-icon">{{ subMenu.icon }}</i
+                  >{{ subMenu.title }}
+                </mat-panel-title>
+              </mat-list-item>
+            </a>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </mat-drawer>
+
+  <div class="main-panel">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

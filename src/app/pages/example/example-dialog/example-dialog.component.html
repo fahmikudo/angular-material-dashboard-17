@@ -1,0 +1,49 @@
+<div class="modal-dialog">
+  <h1 class="mat-dialog-title">Add Periodic</h1>
+  <div class="mat-dialog-content">
+    <form [formGroup]="periodicForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Position</mat-label>
+        <input matInput placeholder="1" formControlName="position" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="hidrogen" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Weight</mat-label>
+        <input
+          mdInput
+          type="number"
+          matInput
+          placeholder="9.122821"
+          formControlName="weight"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Symbol</mat-label>
+        <input matInput placeholder="H" formControlName="symbol" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-action style="text-align: end">
+    <button mat-raised-button mat-dialog-close>Close</button>
+    <button
+      style="margin-left: 8px"
+      mat-raised-button
+      color="primary"
+      [disabled]="periodicForm.invalid"
+      (click)="addPeriodic()"
+    >
+      Save
+    </button>
+  </div>
+</div>

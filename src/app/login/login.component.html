@@ -1,0 +1,18 @@
+<mat-card class="login-container">
+  <img
+    fxLayout="row"
+    src="assets/img/logo.png"
+    class="login-logo"
+    alt=""
+  /><br />
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input type="text" matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput />
+  </mat-form-field>
+
+  <button mat-raised-button (click)="login()">Login</button>
+</mat-card>
