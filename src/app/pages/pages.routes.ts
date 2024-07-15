@@ -16,6 +16,11 @@ export const PAGES_ROUTES: Routes = [
         loadChildren: () =>
           import('./example/example.routes').then((m) => m.EXAMPLE_ROUTES),
       },
+      {
+        path: 'example2',
+        loadChildren: () =>
+          import('./example2/example2.routes').then((m) => m.EXAMPLE_2_ROUTES),
+      },
     ],
   },
 ];

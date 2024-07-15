@@ -44,6 +44,8 @@ $my-theme: mat.define-light-theme(
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .fill-remaining-space {
@@ -57,10 +59,11 @@ body {
 }
 
 .logo {
-  height: 40px;
+  height: 30px;
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .main-toolbar {
   position: fixed;
   top: 0;
@@ -72,7 +75,7 @@ body {
 }
 
 .main-sidenav {
-  min-width: 300px;
+  min-width: 250px;
   box-shadow: 0 0 0 0 !important;
   border-right: 1px solid #f0f0f0;
 }
@@ -84,24 +87,27 @@ body {
 .main-sidenav mat-list-item {
   color: #333;
   font-size: 13px;
+  cursor: pointer;
 }
 .main-sidenav mat-expansion-panel mat-expansion-panel-header {
   margin-top: 8px;
+  margin-left: -7px;
 }
 .main-sidenav a {
   text-decoration: none;
 }
 
 .main-container {
-  margin-top: 65px;
+  margin-top: 48px;
   width: 100%;
 }
 .main-panel {
-  padding: 15px;
+  padding: 10px;
 }
 
 mat-list-item:hover,
-.menu-icon {
+.menu-icon,
+.avatar {
   cursor: pointer;
 }
 

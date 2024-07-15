@@ -1,4 +1,9 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  HostListener,
+  OnInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -29,6 +34,17 @@ import { menus } from './menu';
   templateUrl: './pages.component.html',
   styleUrl: './pages.component.scss',
 })
-export class PagesComponent {
+export class PagesComponent implements OnInit {
   public menus: any[] = menus;
+  public isOpened: boolean = true;
+  desktopViewWidth: number = 1100;
+
+  ngOnInit() {
+    this.onResize(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize(width: number) {
+    this.isOpened = width >= this.desktopViewWidth;
+  }
 }

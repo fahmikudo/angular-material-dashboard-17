@@ -18,18 +18,8 @@
   </mat-menu>
 </mat-toolbar>
 <mat-drawer-container class="main-container" autosize fullscreen>
-  <mat-drawer #drawer mode="side" opened="true" class="main-sidenav">
+  <mat-drawer #drawer mode="side" [opened]="isOpened" class="main-sidenav">
     <div *ngFor="let menu of menus">
-      <mat-list *ngIf="menu.menuItem.length == 0">
-        <a routerLink="{{ menu.path }}" routerLinkActive="sidenav-menu-active">
-          <mat-list-item class="single-level-menu">
-            <mat-panel-title>
-              <i class="material-icons sidenav-icon">{{ menu.icon }}</i
-              >{{ menu.title }}
-            </mat-panel-title>
-          </mat-list-item>
-        </a>
-      </mat-list>
       <mat-accordion *ngIf="menu.menuItem.length > 0">
         <mat-expansion-panel>
           <mat-expansion-panel-header>

@@ -5,5 +5,29 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h1>Welcome to Application</h1>
+    <p>You're working on Application of Platform X</p>
+    <h2>Quick Access</h2>
+    <mat-grid-list cols="2" rowHeight="100px">
+      <mat-grid-tile>
+        <button mat-fab color="primary" matTooltip="Manage Account">
+          <mat-icon>admin_panel_settings</mat-icon>
+        </button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-fab color="primary" matTooltip="Employee">
+          <mat-icon>badge</mat-icon>
+        </button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-fab color="primary" matTooltip="Task">
+          <mat-icon>task</mat-icon>
+        </button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-fab color="primary" matTooltip="Open Settings">
+          <mat-icon>settings</mat-icon>
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-card-content>
 </mat-card>
