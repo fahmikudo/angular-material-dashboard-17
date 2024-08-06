@@ -7,11 +7,11 @@
   /><br />
   <mat-form-field>
     <mat-label>Username</mat-label>
-    <input type="text" matInput />
+    <input type="text" [(ngModel)]="username" matInput />
   </mat-form-field>
   <mat-form-field>
     <mat-label>Password</mat-label>
-    <input type="password" matInput />
+    <input type="password" [(ngModel)]="password" matInput />
   </mat-form-field>
 
   <button mat-raised-button (click)="login()">Login</button>

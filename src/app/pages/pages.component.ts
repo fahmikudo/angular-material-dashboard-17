@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { menus } from './menu';
 
 @Component({
@@ -39,6 +39,8 @@ export class PagesComponent implements OnInit {
   public isOpened: boolean = true;
   desktopViewWidth: number = 1100;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     this.onResize(window.innerWidth);
   }
@@ -46,5 +48,9 @@ export class PagesComponent implements OnInit {
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize(width: number) {
     this.isOpened = width >= this.desktopViewWidth;
+  }
+
+  logout() {
+    this.router.navigateByUrl('/login');
   }
 }

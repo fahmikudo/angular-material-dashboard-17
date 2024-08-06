@@ -1,9 +1,14 @@
 export const menus = [
   {
-    title: 'Welcome',
+    title: 'Dashboard',
     icon: 'dashboard',
-    path: '/pages/welcome',
-    menuItem: [],
+    menuItem: [
+      {
+        title: 'Welcome Page',
+        icon: 'article',
+        path: '/pages/welcome',
+      },
+    ],
   },
   {
     title: 'Examples',
